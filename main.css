@@ -1,0 +1,24 @@
+body{
+            background-color:darkcyan; 
+            color: whitesmoke
+ }
+
+ nav{
+    padding: 5px;
+    line-height: 30px;
+ }
+
+ footer{
+    position: fixed;
+    bottom: 0;
+    text-aling: center; 
+ }
+
+ header{
+    text-align: center;
+ }
+
+ #memeImage{
+    margin-right: 300px;
+    width: 400px; 
+ }
