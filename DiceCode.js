@@ -30,8 +30,8 @@ function playDice(){
     // variables to hold the result 
     let result = ""; 
 
-    //see of the user lost - if they rolled sum og 7 or 11 
-    // "|| meaqns or"
+    //see of the user lost - if they rolled sum of 7 or 11 
+    // "|| means or"
     if (sum == 7 || sum == 11){
         console.log("you lost");
         result = "Sorry! You lost!"; 
