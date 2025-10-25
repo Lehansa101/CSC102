@@ -12,6 +12,9 @@
     <title>CSC102 - Index</title>
     <!--add a link to our css file-->
     <link rel="stylesheet" href="main.css">
+    
+    <!-- link move this code to the external .js file -->
+    <script src="DiceCode.js"></script>
 </head>
 
 <!--anything we want our user to see should go in the body section-->
@@ -40,36 +43,6 @@
 
         <img src= "download.jpg" width= "200" id="memeImage" class="myImgClass">
     </p>
-
-    <!-- TODO: move this code to the external .js file -->
-    <script>
-        //this variable will keep track of the current interval - so we can stop the interval
-        let intervalID = 0;
-
-        //this function will start the image moving around 
-        function startMove(){
-            // create a shortcut/nickname to the image in the HTML
-            let image = document.getElementByID("memeImage");
-
-            // store the current interval id
-            intervalID = setInterval(function(){
-                // the code that runs repeatedly
-                let xCord = getRandomNum();
-                let yCord = getRandomNum();
-
-                // change the x cord 
-                image.style.left = xCord + "px"; 
-                image.style.top = yCord + "px";
-
-            }, 1000); // this code will run every second 
-        }
-
-        // function to randomly generate a number 
-        function getRandomNum(){
-            // get a random number between 0 and 799 
-            return Math.floor(Math.random() * 600); 
-        }
-    </script>
 
     <!--the footer section is where we put legal info-->
     <footer>

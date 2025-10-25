@@ -67,3 +67,46 @@ function rollDice(){
 
     return Math.ceil(die);
 }
+
+/* this is the code to move the image around the home page*/ 
+
+        //this variable will keep track of the current interval - so we can stop the interval
+        let intervalID = 0;
+
+        //this function will start the image moving around 
+        function startMove(){
+            // create a shortcut/nickname to the image in the HTML
+            let image = document.getElementById("memeImage");
+
+            // store the current interval id
+            intervalID = setInterval(function(){
+                // the code that runs repeatedly
+                let xCord = getRandomNum();
+                let yCord = getRandomNum();
+
+                // change the x cord 
+                image.style.left = xCord + "px"; 
+                image.style.top = yCord + "px";
+
+            }, 1000); // this code will run every second 
+
+            // swap the buttons being enabled 
+            document.getElementById("btnStart").disabled = true; // no click Start 
+            document.getElementById("btnStop").disabled = false; // click Stop
+        }
+
+        // function to stop the image from moving 
+        function stopMove(){
+            // call clear interval and pass in the interval id
+            clearInterval(intervalID);
+
+            // swap the buttons being enabled 
+            document.getElementById("btnStart").disabled = false; // click Start
+            document.getElementById("btnStop").disabled = true; //no click Stop 
+        }
+
+        // function to randomly generate a number 
+        function getRandomNum(){
+            // get a random number between 0 and 799 
+            return Math.floor(Math.random() * 800); 
+        }
