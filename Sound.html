@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Sound</title>
+</head>
+<body>
+    <h1>Play Sound</h1>
+
+    <main> 
+        <!-- div to hold the dynamically created audio element -->
+        <div id="divAudio"></div>
+
+        <!-- button to add audio to the page -->
+        <button id="btnAddAudio" onclick="addAudio();">Add Audio</button>
+
+        <!-- button to play & pause audio to the page -->
+        <button id="btnPlayAudio" onclick="playAudio();" hidden="true">Play Audio</button>
+        <button id="btnPauseAudio" onclick="playPause();" hidden="true">Pause Audio</button>
+    </main>
+
+    <!-- TODO: move to an external JS file -->
+    <script>
+        // create a function to add an audio element to the HTML div 
+        function addAudio(){
+            // create a new audio HTML element
+            let audioElem = document.createElement("audio");
+            // set the id so we can work with the audio element in other functions 
+            audioElem.setAttribute("id", "myAudio");
+            // make sure you use your sound file name here 
+            audioElem.setAttribute("src", "us-lab-background.mp3"); 
+            // this adds the control dashboard to show that the audio file is working 
+            audioElem.setAttribute("controls", "controls"); 
+
+            // add the new audio element to the empty div in our HTML
+            document.getElementById("divAudio").appendChild(audioElem); 
+
+            // hide the add audio button 
+            document.getElementById("btnAddAudio").hidden = "true"; 
+
+            // unhide the play & pause buttons 
+            document.getElementById("btnPlayAudio").hidden = false;
+            document.getElementById("btnPauseAudio").hidden = false; 
+
+
+        }
+
+        //function to play the audio 
+        function playAudio(){
+            let audio = document.getElementById("myAudio");
+            audio.play();
+
+        }
+
+        //function to pause the audio 
+        function pauseAudio(){
+            let audio = document.getElementById("myAudio");
+            audio.pause();
+
+        }
+
+
+    </script>
+</body>
+</html>
