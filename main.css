@@ -33,5 +33,35 @@ body{
  #memeImage{
     margin-right: 100px;
     width: 200px; 
-    
  }
+
+/* table styles */
+        table{
+            max-width: 400px;
+            /* multiple borders in the same area will collapse into a single border */
+            border-collapse: collapse; 
+        }
+
+        tr, th, td{
+            padding: 10px;
+        }
+
+        tr{
+        border: 2px solid green; 
+        }
+
+        th{
+            background-color: rgb(97, 34, 152); 
+            color: rgb(188, 188, 202); 
+            text-align: left; 
+        }
+
+        tr:nth-child(even){
+            background-color: lightgray; 
+            color: navy;
+        }
+
+        tr:hover{
+            background-color: rgb(152, 88, 208); 
+            color: rgb(188, 188, 202);     
+        }

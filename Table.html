@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Programming Mistakes</h1>
+
+        <table id="tblData">
+            <caption>Programming Mistakes and the costs</caption>
+            <!-- tr is table row - each row should be in a tr -->
+            <!-- <tr>
+                td - table data/cell/column - the actual data goes here 
+                <td></td>
+                <td></td>
+            </tr> -->
+            <tr>
+                <!-- th is the table heading -->
+                <th>Project</th>
+                <th>Year</th>
+                <th>Cost</th>
+            </tr>
+        </table>
+    </main>
+
+    <script>
+        // function to load the data into the table
+        function loadData(){
+            // array of problem projects - 2d array 
+            let arrProblems = [
+                // first row of data - nested array 
+                ["Crowdstrike", 2024, "$5.4B"],
+                ["Facebook", 2020, "$90M"],
+                ["Citibank", 2020, "$900M"],
+                ["Mars Climate Orbiter", 1999, "$327M"]
+            ];
+
+            // nested for loops to display the data 
+            for (let i=0; i<arrProblems.length; i++){
+                // create the table row to store the data
+                let tr = document.createElement("tr"); 
+
+                // loop through each nested array 
+                for (let j=0; j < arrProblems[i].length; j++){
+                    // create the table data to display 1 piece of data
+                    let td = document.createElement("td"); 
+
+                    // put the data in the td 
+                    td.textContent = arrProblems[i][j];
+                    
+                    // append the new data to the existing row 
+                    tr.appendChild(td); 
+                }
+
+                // add the new row to the existing table 
+                document.getElementById("tblData").appendChild(tr); 
+            }
+        }
+
+        loadData(); 
+    </script>
+</body>
+</html>
